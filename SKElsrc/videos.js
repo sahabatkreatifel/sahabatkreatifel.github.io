@@ -7,7 +7,7 @@ function videoTitle(videonum){
 				"Sop Ayam Fillet CACANA, Praktis dan Bergizi, sangat mudah dinikmati oleh anak²",
 				"Siasat berkebun di lahan yang terbatas di depan rumah, jadi hijau dan asri!",
 				"Berwisata di Taman Rekreasi Wiladatika saat pandemi dan sudah jenuh dirumah, tetap AMAN dan NYAMAN",
-				"Panen apel sepuasnya di kebun orang! Cuma 25.000! | Wisata petik apel di Kota Batu, Jawa Timur."];
+				"Panen apel sepuasnya di kebun orang! Bawa pulang lagi! wah, ternyata wisata petik apel di Kota Batu"];
 	return title[videonum-1];			
 }
 function videoShortTitle(videonum){

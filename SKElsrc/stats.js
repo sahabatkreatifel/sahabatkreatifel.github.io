@@ -742,12 +742,12 @@ function daysTotal(mauApa, month, year){
 				var u = q.toString();
 				u = u.toLocaleString("id-ID");
 				if (p%2==0){
-					document.write("<div class='bungkusTambahan even2'><a href='rum-vids/"+videoLinks(p)+".html'>")
+					document.write("<div class='bungkusTambahan even2'><a href='rum-vids/"+videoLinks(p)+"'>")
 					document.write("<div id='tambahan'>"+u+"</div>");
 					document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 					document.write("</a></div>")
 				} else if (p%2!=0){
-					document.write("<div class='bungkusTambahan'><a href='rum-vids/"+videoLinks(p)+".html'>")
+					document.write("<div class='bungkusTambahan'><a href='rum-vids/"+videoLinks(p)+"'>")
 					document.write("<div id='tambahan'>"+u+"</div>");
 					document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 					document.write("</a></div>")

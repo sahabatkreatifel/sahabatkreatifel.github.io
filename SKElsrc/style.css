@@ -1,0 +1,399 @@
+/**IMPORTS**/
+	/*LOBSTER TWO*/@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+	/*RUBIK*/@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+	/*MONTSERRAT*/@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+	/*JETBRAINS*/@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**
+	 * For modern browsers
+ 	* 1. The space content is one way to avoid an Opera bug when the
+	 *    contenteditable attribute is included anywhere else in the document.
+	 *    Otherwise it causes space to appear at the top and bottom of elements
+	 *    that are clearfixed.
+	 * 2. The use of `table` rather than `block` is only necessary if using
+	 *    `:before` to contain the top-margins of child elements.
+	 */
+	.cf:before,
+	.cf:after {
+	    content: " "; /* 1 */
+	    display: table; /* 2 */
+	}
+
+	.cf:after {
+	    clear: both;
+	}
+
+	/**
+	 * For IE 6/7 only
+	 * Include this rule to trigger hasLayout and contain floats.
+	 */
+	.cf {
+	    *zoom: 1;
+	}
+body{
+	min-height: 100%;
+	margin:auto;
+	background-color: #EEEFFF;
+	font: 16px/25px rubik, arial, sans-serif;
+	font-weight: 400;
+	color:#222;
+}
+a{
+	text-decoration: none;
+}
+#article{
+	width: 85%;
+	margin: auto;
+}
+.container{
+	width:100%;
+	min-height: 100%;
+	padding-top: 20px;
+	box-sizing: border-box;
+	margin-top:20px;
+}
+header{
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #37003c;
+}
+header h1{
+	font-family: "Lobster Two",serif;
+	font-size: 40px;
+	color:snow;
+}
+.container h1,.container h2,.container h3,.container h4,.container h5,.container h6{
+	margin-bottom: 9px;
+	font-family: "montserrat", sans serif;
+	font-weight: 800;
+}
+.container h1{
+	font-size:  28px;
+}
+.container h2{
+	font-size:  26px;
+}
+.container h3{
+	font-size:  24px;
+}
+.container h4{
+	font-size:  22px;
+}
+.container h5{
+	font-size:  20px;
+}
+.container h6{
+	font-size:  18px;
+}
+.tableWrapper{
+	overflow-x: scroll;
+	margin-bottom: 22px;
+}
+.tableWrapper2{
+	margin-bottom: 50px;
+}
+p{
+	margin-bottom:20px;
+}
+ol{
+	margin-left: 15px;
+	margin-bottom: 20px;
+}
+.textContainer,.judulAsli,#videoList{
+	margin-bottom:30px;
+}
+.judulAsli{
+	font:700 18px montserrat;
+}
+.viewsData, .viewsData th, .viewsData td{
+	border: 0px solid #111;
+	border-collapse: collapse;
+}
+.viewsData th, .viewsData td{
+	min-width: 60px;
+}
+.viewsData tr:hover{
+	background: #37003c;
+	color:snow;
+}
+th,td{
+	padding:5px;
+}
+th{
+	background:#37003c;
+	color:snow;
+}
+.noBorder th, .noBorder td{
+}
+
+#even{
+	background-color: #abe6ff;
+}
+#even:hover{
+	background-color: #37003c;
+}
+#entrance{
+	background: #03b6fc;
+}
+.viewsData tr{
+	transition: all 300ms ease-in-out;
+}
+.viewsData tr:hover > #entrance{
+	color:#222;
+}
+#lowerCount{
+	background: red;
+	color:white;
+}
+.numbersView{
+	font-family: "JetBrains Mono", monospace;
+	font-weight: 400;
+	text-align: center;
+}
+.jumlahView{
+
+}
+#keterangan{
+	margin-left:12px;
+	margin-bottom:5px;
+}
+#keterangan td{
+	min-width: 60px;
+	padding:0;
+}
+.stats-lengkap a{
+	color: snow;
+	padding: 5px;
+	background: #37003c;
+	border: 1px solid transparent;
+	transition: 0.2s;
+}
+.stats-lengkap a:hover{
+	color: #37003c;
+	border: 1px solid #37003c;
+	background: #abe6ff;
+}
+.stats-lengkap a:active{
+	color: #37003c;
+	border: 1px solid #37003c;
+	background: snow;
+}
+footer{
+	position: relative;
+	background-color: #37003c;
+	padding: 30px;
+	text-align: center;
+	bottom: 0;
+}
+footer p{
+	color:snow;
+	margin:auto;
+}
+footer a{
+	color:snow;
+}
+.ytLogo{
+	width:28px;
+	margin: -3px 9px 0 0;
+	vertical-align: middle;
+}
+#tambahan{
+	font-size: 90px;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 40px;
+}
+#judulVid{
+	font-size:25px;
+	font-weight: 500;
+}
+#tambahan, #judulVid{
+	position: relative;
+	top: 10px;
+	transition: all 300ms ease-in-out;
+}
+.updateViews{
+	display: flex;
+	margin: auto;
+	width: 100%;
+	vertical-align: middle;
+}
+.bungkusTambahan{
+	color: #37003c;
+	text-align: center;
+	padding: 70px 0;
+	margin: auto;
+	width: 90%;
+	height: 100%;
+	background:#abe6ff;
+	vertical-align: middle;
+}
+.bungkusTambahan a{
+	color:#37003c;
+}
+.even2{
+	color: #abe6ff;
+	background: #37003c;
+}
+.even2 a{
+	color: #abe6ff;
+}
+.even2:hover > .judulVid{
+}
+.bungkusTambahan a:hover > #tambahan, .bungkusTambahan:hover > #tambahan{
+	font-size: 112px;
+}
+.bungkusTambahan:hover > #judulVid{
+
+}
+.totalTambahan{
+	width: 100%;
+	background: #141940;
+	color: snow;
+}
+.containerPertambahan{
+	margin-bottom: 60px;
+	text-align: center;
+}
+.titikDua{
+	text-align: center;
+}
+h2.jarakin{
+	margin-bottom: 20px;
+}
+h1.post-title{
+	color: #222;
+	margin-bottom:20px;
+}
+.judulVideo{
+	padding-left:15px;
+}
+.copyright, .channelID{
+	color: snow;
+	font-weight: 400;
+	margin:auto;
+}
+.videoContainerYt{
+	text-align: center;
+	margin-bottom: 40px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.videoContainerYt::after{
+	padding-top: 56.25%;
+		display: block;
+		content: '';
+}
+.videoContainerYt iframe{
+	position: absolute;
+		top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#num-vid{
+	display:none;
+}
+/*SCROLLBAR*/
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #37003c;
+  border-radius: 25px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #91c3d9;
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #abe6ff; 
+}
+@media screen and (max-width: 800px) {
+		.container {
+		width:100%;
+		min-height: 100%;
+		}
+		#article{
+			width: 95%;
+		}
+		header h1{
+		font-size: 30px;
+	}
+	.updateViews{
+		display: block;
+		margin: auto;
+	}
+	.bungkusPertambahan{
+		width: 100%;
+		padding: 42px;
+		text-align: center;
+	}
+	.totalTambahan{
+		width:90%;
+	}
+	.videoContainerYT{
+		position: relative;
+	}
+	.ytVid{
+		position: relative;
+	}
+}

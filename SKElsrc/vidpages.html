@@ -1,0 +1,35 @@
+<h1 class="post-title"><script type="text/javascript">document.write(videoShortTitle(n))</script></h1>
+<div class="videoContainerYt">
+	<script type="text/javascript">
+	var code = videoCode(n);
+	document.write(embedding(code));
+</script>
+</div>
+<h2>Judul Asli</h2>
+<div class="judulAsli"><script type="text/javascript">document.write(videoTitle(n));</script></div>
+<h2>Tanggal upload</h2>
+<div class="textContainer"><p>
+<script type="text/javascript">
+	var tanggalString = tanggalUpload(n);
+	var date1 = new Date(tanggalString);
+	var uploadDate = date1.getDate();
+	var uploadMonth = date1.getMonth();
+	uploadMonth = monthString(uploadMonth)
+	var uploadYear = date1.getFullYear();
+	document.write(uploadDate+" "+uploadMonth+" "+ uploadYear+" ")
+	var date2 = new Date();
+	var diffTime = Math.abs(date2 - date1);
+	var diffYears = diffTime / (1000 * 60 * 60 * 24*365);
+	videoAge(diffYears, n);
+</script></p></div>
+<div class="textContainer">
+	<h2>Jumlah tontonan</h2>
+	<script type="text/javascript">
+		var month = (getTodayDate(2)+1);
+		var date = (getTodayDate(1));
+		var monththeString = (getTodayDate(3));
+		var year = (getTodayDate(4));
+		var views = videoSelector(n,1,month,true,2);
+		document.write(views+" kali (Per "+date+" "+monththeString+" "+year+" pukul 07.00 WIB)");
+	</script>
+</div>

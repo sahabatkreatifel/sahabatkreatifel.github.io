@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Statistik Sahabat Kreatif El</title>
+	 <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="SKElsrc/style.css">
+	<script src="SKElsrc/stats.js"></script>
+	<script src="SKElsrc/footer.js"></script>
+	<script src="SKElsrc/header.js"></script>
+</head>
+<body>
+<header><script type="text/javascript">headerScript(1.5);</script></header>
+<div class="container">
+	<div id="article">
+		<h1 class="post-title">Statistik Sahabat Kreatif El</h1>
+		<h2 class="jarakin">Penambahan hari ini: <script type="text/javascript">document.write(tanggalan(1)+", "+tanggalan(2)+" "+tanggalan(3)+" "+tanggalan(4))</script></h2>
+		<div class="containerPertambahan">
+			<script type="text/javascript">
+				update_View();	
+			</script>
+		</div>
+		<div class="containerPertambahan">
+		<script type="text/javascript">
+			monthlyProgress();
+		</script>
+		</div>
+		<h1>Tabel jumlah <i>views</i></h1>
+		<h2>Tahun 2021</h2>
+		<script type="text/javascript">
+			var currentYear = new Date().getFullYear();
+			var currentMonth = (new Date().getMonth())+1;
+			for (var year = 2021; year <= currentYear; year++){
+				for (var month = 5; month <= currentMonth; month++){
+					tableBuilder(1, month, year, 1);
+					
+				}
+			}	
+		</script>
+		<h2>Keterangan</h2>
+		<div class="tableWrapper2">
+			<table id="keterangan">
+				<tr>
+					<td>Catatan</td>
+					<td class="titikDua">:</td>
+					<td>Data views terbaru selalu diambil setiap pagi pukul 06.00 - 08.00 WIB.</td>
+				</tr>
+			</table>
+			<table id="keterangan">
+				<tr>
+					<td id="entrance" class="warnaKeterangan"></td>
+					<td class="titikDua">:</td>
+					<td>Menandakan hari ketika video itu di-<i>upload</i>.</td>
+				</tr>
+			</table>
+			<table id="keterangan">
+				<tr>
+					<td id="lowerCount" class="warnaKeterangan"></td>
+					<td class="titikDua">:</td>
+					<td>Menandakan ketika total <i>views</i> hari itu lebih rendah dari hari sebelumnya. Biasanya disebabkan oleh error di YouTube.</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<footer><script type="text/javascript">footerScript(1);</script></footer>
+</body>
+</html>

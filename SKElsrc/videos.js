@@ -35,7 +35,18 @@ function videoCode(videonum){
 				"eE-8B1u_yfc"];
 	return code[videonum-1];
 }
-
+function videoCounts(){
+	var code = ["BBSQmNl4fRA",
+				"63stAwX__zY",
+				"qV-mev5rqrg",
+				"UBRCMAsFaZ4",
+				"cy6hJyk4r8Q",
+				"HASZTilywhY",
+				"dwbzq9-ftb4",
+				"i3bWZ1czYiU",
+				"eE-8B1u_yfc"];
+	return code.length;
+}
 function embedding(code){
 	var embedLink = "<iframe width='560' height='315' src='https://www.youtube.com/embed/"+code+"' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>";
 	return embedLink;

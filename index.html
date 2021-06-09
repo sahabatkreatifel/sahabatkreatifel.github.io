@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="SKElsrc/style.css">
 	<script src="SKElsrc/stats.js"></script>
+	<script src="SKElsrc/videos.js"></script>
 	<script src="SKElsrc/header.js"></script>
 	<script src="SKElsrc/footer.js"></script>
 	<noscript><p><strong><i>Please enable JavaScript to view this page properly</i>.</strong></p></noscript>
@@ -17,46 +18,60 @@
 <header><script type="text/javascript">headerScript(1);</script></header>
 <div class="container">
 	<div id="article">
-		<h1 class="post-title">Statistik Sahabat Kreatif El</h1>
-		<h2 class="jarakin">Penambahan hari ini, 9 video terakhir: <script type="text/javascript">document.write(tanggalan(1)+", "+tanggalan(2)+" "+tanggalan(3)+" "+tanggalan(4))</script></h2>
-		<div class="containerPertambahan">
-	        <script type="text/javascript">
-	            update_View_Index();	
-	        </script>
-	    </div>
-	    <div class="jumlahView">
-			<h1>Tabel jumlah <i>views</i></h1>
-			<script type="text/javascript">
-		            var currentYear = new Date().getFullYear();
-		            var currentMonth = (new Date().getMonth())+1;
-		            tableBuilder(1, currentMonth, currentYear, 1);
-		    </script>
-		    <h6 class="stats-lengkap"><a href="SKElView.html">Lihat Statistik lengkap</a></h6>
-			<h2>Keterangan</h2>
-			<div class="tableWrapper2">
-				<table id="keterangan">
-					<tr>
-						<td>Catatan</td>
-						<td class="titikDua">:</td>
-						<td>Data views terbaru selalu diambil setiap pagi pukul 06.00 - 08.00 WIB.</td>
-					</tr>
-				</table>
-				<table id="keterangan">
-					<tr>
-						<td id="entrance" class="warnaKeterangan"></td>
-						<td class="titikDua">:</td>
-						<td>Menandakan hari ketika video itu di-<i>upload</i>.</td>
-					</tr>
-				</table>
-				<table id="keterangan">
-					<tr>
-						<td id="lowerCount" class="warnaKeterangan"></td>
-						<td class="titikDua">:</td>
-						<td>Menandakan ketika total <i>views</i> hari itu lebih rendah dari hari sebelumnya. Biasanya disebabkan oleh error di YouTube.</td>
-					</tr>
-				</table>
+		<h1 class="post-title">Video terbaru</h1>
+		<div class="videoContainerYt">
+            <script type="text/javascript">
+                var n = videoCounts();
+                var code = videoCode(n);
+                document.write(embedding(code));
+            </script>
+        </div>
+        <div class="judulAsli"><h2><script type="text/javascript">
+        var g = videoCounts();
+        document.write("<a href ='"+videoLinks(g)+"'>")
+        document.write(videoTitle(videoCounts())+"</a>");</script></h2></div>
+		<div class="progress">
+			<h2 class="jarakin">Penambahan hari ini, 9 video terakhir: <script type="text/javascript">document.write(tanggalan(1)+", "+tanggalan(2)+" "+tanggalan(3)+" "+tanggalan(4))</script></h2>
+			<div class="containerPertambahan">
+		        <script type="text/javascript">
+		            update_View_Index();	
+		        </script>
+		    </div>
+		    <div class="jumlahView">
+				<h1>Tabel jumlah <i>views</i></h1>
+				<script type="text/javascript">
+			            var currentYear = new Date().getFullYear();
+			            var currentMonth = (new Date().getMonth())+1;
+			            tableBuilder(1, currentMonth, currentYear, 1);
+			    </script>
+			    <h6 class="stats-lengkap"><a href="SKElView.html">Lihat Statistik lengkap</a></h6>
+				<h2>Keterangan</h2>
+				<div class="tableWrapper2">
+					<table id="keterangan">
+						<tr>
+							<td>Catatan</td>
+							<td class="titikDua">:</td>
+							<td>Data views terbaru selalu diambil setiap pagi pukul 06.00 - 08.00 WIB.</td>
+						</tr>
+					</table>
+					<table id="keterangan">
+						<tr>
+							<td id="entrance" class="warnaKeterangan"></td>
+							<td class="titikDua">:</td>
+							<td>Menandakan hari ketika video itu di-<i>upload</i>.</td>
+						</tr>
+					</table>
+					<table id="keterangan">
+						<tr>
+							<td id="lowerCount" class="warnaKeterangan"></td>
+							<td class="titikDua">:</td>
+							<td>Menandakan ketika total <i>views</i> hari itu lebih rendah dari hari sebelumnya. Biasanya disebabkan oleh error di YouTube.</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</div>
+		
 	</div>
 </div>
 <footer><script type="text/javascript">footerScript(1);</script></footer>

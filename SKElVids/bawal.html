@@ -1,58 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
 	<title>Ikan Bawal Asam Manis Nanas | Sahabat Kreatif El</title>
 	<meta charset="UTF-8">
+	<meta name="description" content="Resep ikan bawal asam manis nanas yang cocok untuk menjadi hidangan sehari-hari maupun dalam acara-acara lainnya">
+	<meta name="keywords" content="Ikan, bawal, asam manis, nanas, sweet and sour, Indonesia, goreng, tumis, recipe, sedap, resep">
+	<meta name="author" content="Sahabat Kreatif El">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../SKElsrc/style.css">
 	<script src="../SKElsrc/videos.js"></script>
 	<script src="../SKElsrc/stats.js"></script>
 	<script src="../SKElsrc/header.js"></script>
 	<script src="../SKElsrc/footer.js"></script>
+	<script src="../SKElsrc/vidpages.js"></script>
 	<script type="text/javascript">var n = 2;var pageLevel=2</script>
+	<noscript><h4>Please enable JavaScript to view this page properly.</h4></noscript>
 </head>
-<body><header><script type="text/javascript">headerScript(pageLevel);</script></header>
+<body>
+<header><script type="text/javascript">headerScript(pageLevel)</script></header>
 <div class="container">
 	<div id="article">
-		<h1 class="post-title"><script type="text/javascript">document.write(videoShortTitle(n))</script></h1>
-		<div class="videoContainerYt">
-			<script type="text/javascript">
-				var code = videoCode(n);
-				document.write(embedding(code));
-			</script>
-		</div>
-		<h2>Judul Asli</h2>
-		<div class="judulAsli"><script type="text/javascript">document.write(videoTitle(n));</script></div>
-		<h2>Tanggal upload</h2>
-		<div class="textContainer"><p>
-			<script type="text/javascript">
-				var tanggalString = tanggalUpload(n);
-				var date1 = new Date(tanggalString);
-				var uploadDate = date1.getDate();
-				var uploadMonth = date1.getMonth();
-				uploadMonth = monthString(uploadMonth)
-				var uploadYear = date1.getFullYear();
-				document.write(uploadDate+" "+uploadMonth+" "+ uploadYear+" ")
-				var date2 = new Date();
-				var diffTime = Math.abs(date2 - date1);
-				var diffYears = diffTime / (1000*60*60*24*365);
-				videoAge(diffYears, n);
-			</script></p>
-		</div>
-		<div class="textContainer">
-			<h2>Jumlah tontonan</h2>
-			<script type="text/javascript">
-				var month = (getTodayDate(2)+1);
-				var date = (getTodayDate(1));
-				var year = (getTodayDate(4));
-				var monththeString = (getTodayDate(3));
-				var year = (getTodayDate(4));
-				var views = videoSelector(n,1,month,year,true,2);
-				document.write(views+" kali (Per "+date+" "+monththeString+" "+year+" pukul 07.00 WIB)");
-			</script>
-		</div>
-	</div> 
-</div> 
+		<script type="text/javascript">videoPages(n)</script>
+	</div>
+</div>	
 <footer><script type="text/javascript">footerScript(pageLevel);</script></footer>
 </body>
 </html>

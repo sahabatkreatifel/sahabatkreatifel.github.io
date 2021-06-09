@@ -109,7 +109,7 @@ function videoAge(diffYears, videonum){
 			} else if (diffMonth > 1 && (diffDays!=NaN || diffDays!=undefined)){
 				document.write(" ("+diffMonth+" bulan "+diffDays+" hari)"); 
 			} else if (diffMonth == 1 ||(diffDays == NaN || diffDays== undefined)){
-				document.write(" ("+diffMonth+" bulan");
+				document.write(" ("+diffMonth+" bulan)");
 			}
 			
 		}

@@ -4,10 +4,9 @@ function daysTotal(mauApa, month, year){
 	else if ((year%100 == 0) && (year%400 != 0)){leap = false;}
 	else {leap = true;}
 	var daysInMonth;
-	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
+	if (month==1||month==3||month==5||month==7|| month == 8 || month == 10 || month == 12){
 		daysInMonth = 31;
-	} else if (month == 4 || month == 6 || month == 9 || month == 11){
-		daysInMonth = 30;}
+	} else if (month == 4 || month == 6 || month == 9 || month == 11){daysInMonth = 30;}
 	else if ((month == 2) && (leap == true)){daysInMonth = 29;}
 	else if ((month == 2) && (leap == false)){daysInMonth = 28;}
 	if(mauApa == 1){return leap;}
@@ -17,22 +16,20 @@ function tH(column, month, year){
 	var header = ["Video&darr;","Tanggal&rarr;"];
 	var leap = daysTotal(1,month,year);
 	var daysInMonth = daysTotal(2,month,year)+1;
-	for (var i = 1; i < daysInMonth; i++){
-		header.push(i+"/"+month);
-	}
+	for (var i = 1; i < daysInMonth; i++){header.push(i+"/"+month);}
 	if (column == 0){return header.length;}
 	else {return header[column-1];}
 }
 function videoTitles(videonum){
 	var videos = [/*1*/"Bubur Rica",
-				/*2*/"Ikan Bawal",
-				/*3*/"Lidah Buaya",
-				/*4*/"Sop-sopan",
-				/*5*/"Sayur Oyong",
-				/*6*/"Cacana",
-				/*7*/"Berkebun",
-				/*8*/"Wiladatika",
-				/*9*/"Apel Malang"];
+			/*2*/"Ikan Bawal",
+			/*3*/"Lidah Buaya",
+			/*4*/"Sop-sopan",
+			/*5*/"Sayur Oyong",
+			/*6*/"Cacana",
+			/*7*/"Berkebun",
+			/*8*/"Wiladatika",
+			/*9*/"Apel Malang"];
 	if (videonum == 0){return videos.length;}
 	else {return videos[videonum-1];}
 }
@@ -74,8 +71,7 @@ function videoSelector (videonum,date,month,year,formatted,mauApa){
 }
 function bubur(date,month,year,mauApa){
 	var viewsMay = [4731,4742,4752,4764,4776,4785,4793,4800,4809,4816,4827,4834,4844,4855,4865,4873,4882,4893,4903,4911,4922,4930,4937,4947,4955,4970,4987,5004,5015,5025,5034];
-	var viewsJune = [5052,5064,5072,5082,5089,5101,5109,5117,
-5125];
+	var viewsJune = [5052,5064,5072,5082,5089,5101,5109,5117,5125,5134];
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){
@@ -100,8 +96,7 @@ function bubur(date,month,year,mauApa){
 }
 function bawal(date,month,year,mauApa){
 	var viewsMay = [4663,4678, 4693,4719,4744,4767,4785,4796,4817,4831,4846,4868,4886,4908,4923,4939,4955,4984,5009,5027,5045,5067,5092,5110,5135,5161,5192,5213,5232,5251,5273];
-	var viewsJune = [5294,5313,5339,5362,5390,5417,5434,5452,
-					/*9*/5477];
+	var viewsJune = [5294,5313,5339,5362,5390,5417,5434,5452,5477,5491];
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){
@@ -126,8 +121,7 @@ function bawal(date,month,year,mauApa){
 }
 function lidahBuaya(date,month,year,mauApa){
 	var viewsMay = [3070,3081,3092,3104,3114,3120,3128,3138,3146,3155,3165,3171,3177,3186,3194,3205,3211,3218,3227,3238,3251,3260,3267,3274,3283,3294,3306,3319,3327,3336,3345];
-	var viewsJune = [3359,3368,3377,3387,3394,3405,3414,3421,
-					3429];
+	var viewsJune = [3359,3368,3377,3387,3394,3405,3414,3421,3429,3436];
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){
@@ -152,8 +146,7 @@ function lidahBuaya(date,month,year,mauApa){
 }
 function sopSopan(date,month,year,mauApa){
 	var viewsMay = [3205,3212,3223,3235,3246,3261,3273,3282,3292,3301,3313,3323,3331,3340,3349,3358,3369,3380,3389,3400,3411,3426,3435,3445,3457,3472,3489,3501,3512,3526,3538];
-	var viewsJune = [3554,3565,3579,3589,3605,3618,3626,3639,
-					/*9*/3649];
+	var viewsJune = [3554,3565,3579,3589,3605,3618,3626,3639,3649,3659];
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){
@@ -178,8 +171,7 @@ function sopSopan(date,month,year,mauApa){
 }
 function oyong(date,month,year,mauApa){
 	var viewsMay = [2573,2585,2600,2613,2629,2646,2660,2672,2685,2694,2703,2715,2725,2737,2746,2757,2766,2775,2789,2799,2817,2838,2853,2864,2877, 2889,2904,2915,2923,2935,2946];
-	var viewsJune = [2966,2977,2988,3000,3017,3034,3047,3059,
-					/*9*/3074];
+	var viewsJune = [2966,2977,2988,3000,3017,3034,3047,3059,3074,3085];
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){
@@ -204,8 +196,7 @@ function oyong(date,month,year,mauApa){
 }
 function cacana(date,month,year,mauApa){
 	var viewsMay = [2141,2148,2159,2172,2182,2190,2205,2211,2218,2228,2237,2246,2253,2263,2270,2281,2292,2302,2313,2325,2335,2344,2353,2363,2372,2387,2395,2406,2413,2423,2433];
-	var viewsJune = [2443,2456,2466,2475,2483,2497,2508,2516,
-					/*9*/2525];				
+	var viewsJune = [2443,2456,2466,2475,2483,2497,2508,2516,2525,2536];				
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){
@@ -230,8 +221,7 @@ function cacana(date,month,year,mauApa){
 }
 function berkebun(date,month,year,mauApa){
 	var viewsMay = [1245,1252,1262,1277,1288,1294,1302,1310,1321,1330,1340,1346,1356,1368,1375,1381,1393,1403,1410,1418,1430,1441,1450,1459,1468,1483,1498,1515,1527,1537,1547];
-	var viewsJune = [1564,1581,1594,1607,1617,1632,1641,1654,
-					/*9*/1663];				
+	var viewsJune = [1564,1581,1594,1607,1617,1632,1641,1654,1663,1675];				
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){
@@ -256,8 +246,7 @@ function berkebun(date,month,year,mauApa){
 }
 function wiladatika(date,month,year,mauApa){
 	var viewsMay = [195,205,220,233,243,253,261,272,289,300,311,323,334,355,370,379,400,414,425,435,451,462,475,485,499,516,533,555,571,590,603];
-	var viewsJune = [627,644,662,679,693,711,725,741,
-					/*9*/754];
+	var viewsJune = [627,644,662,679,693,711,725,741,754,767];
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){
@@ -282,8 +271,7 @@ function wiladatika(date,month,year,mauApa){
 }
 function apel(date,month,year,mauApa){
 	var viewsMay = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,62,87,116,137,163,190];
-	var viewsJune = [223,241,283,309,333,376,425,476,
-					/*9*/541];
+	var viewsJune = [223,241,283,309,333,376,425,476,541,582];
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){

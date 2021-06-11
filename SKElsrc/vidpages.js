@@ -20,17 +20,17 @@ function videoPages(n){
     document.write("<div class='videoContainerYt'>");
     document.write(embeddingvid);
     document.write("</div>");
-    document.write("<h2>Judul Asli</h2>");
+    document.write("<div class='inH'><h2>Judul Asli</h2></div>");
     document.write("<div class='judulAsli'>");
     document.write(videoTitle(n));
     document.write("</div>");
-    document.write("<h2>Tanggal upload</h2>");
+    document.write("<div class='inH'><h2>Tanggal upload</h2></div>");
     document.write("<div class='textContainer'><p>");
     document.write(uploadDate+" "+uploadMonth+" "+ uploadYear+" ")
     videoAge(diffYears, n);
     document.write("</p></div>")
+    document.write("<div class='inH'><h2>Jumlah Tontonan</h2></div>");
     document.write("<div class='textContainer'>");
-    document.write("<h2>Jumlah Tontonan</h2>");
     document.write(views+" kali (Per "+todayDate+" "+monththeString+" "+year+" pukul 07.00 WIB)");
     document.write("</div>")
 }

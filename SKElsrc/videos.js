@@ -137,5 +137,13 @@ function getTodayDate(mauApa){
 	else if (mauApa == 2){return month;}
 	else if (mauApa == 3){return monthstring;}
 	else if (mauApa == 4){return year;}
-
+}
+function uploadDate(videonum){
+	var x = new Date(tanggalUpload(videonum));
+	var date= x.getDate();
+	var month = x.getMonth();
+	var stringMonth = monthString(month);
+	console.log("stringMonth = "+stringMonth)
+	var year = x.getFullYear()
+	return date+" "+stringMonth+" "+year
 }

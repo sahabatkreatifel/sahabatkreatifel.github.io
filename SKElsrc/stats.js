@@ -295,7 +295,7 @@ function apel(date,month,year,mauApa){
 }
 function jeruk(date,month,year,mauApa){
 	//var viewsMay = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,62,87,116,137,163,190];
-	var viewsJune = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+	var viewsJune = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){

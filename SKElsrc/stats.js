@@ -292,6 +292,7 @@ function apel(date,month,year,mauApa){
 		else if(month == 8 && mauApa == 3){return viewsAugust[(viewsJune.length)-2];}
 		else if(month == 8 && mauApa == 4){return viewsAugust[date-1];}
 	}
+}
 function jeruk(date,month,year,mauApa){
 	//var viewsMay = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,62,87,116,137,163,190];
 	var viewsJune = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]

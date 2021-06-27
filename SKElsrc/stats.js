@@ -51,6 +51,7 @@ function videoSelector (videonum,date,month,year,formatted,mauApa){
 	else if (videonum == 7){views = berkebun(date,month,year,mauApa);}
 	else if (videonum == 8){views = wiladatika(date,month,year,mauApa);}
 	else if (videonum == 9){views = apel(date,month,year,mauApa);}
+	//else if(videonum==10){views=jeruk(date,month,year,mauApa);}
 	if (formatted == false){return views;}
 	else if (formatted == true){
 		if (views == 0 || views == undefined || views == NaN){return "-";}
@@ -291,7 +292,30 @@ function apel(date,month,year,mauApa){
 		else if(month == 8 && mauApa == 3){return viewsAugust[(viewsJune.length)-2];}
 		else if(month == 8 && mauApa == 4){return viewsAugust[date-1];}
 	}
-	
+function jeruk(date,month,year,mauApa){
+	//var viewsMay = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,62,87,116,137,163,190];
+	var viewsJune = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+	var viewsJuly = [];
+	var viewsAugust = [];
+	if (year == 2021){
+		if (month == 0){return viewsMay.length;}
+		else if (month == 5 && mauApa == 1){return viewsMay[date-1];}
+		else if(month == 5 && mauApa == 3){return viewsMay[(viewsMay.length)-2];}
+		else if(month == 5 && mauApa == 2){return viewsMay[(viewsMay.length)-1];}
+		else if(month == 5 && mauApa == 4){return viewsMay[date-1];}
+		else if (month == 6 && mauApa == 1){return viewsJune[date-1];}
+		else if(month == 6 && mauApa == 2){return viewsJune[(viewsJune.length)-1];}
+		else if(month == 6 && mauApa == 3){return viewsJune[(viewsJune.length)-2];}
+		else if(month == 6 && mauApa == 4){return viewsJune[date-1];}
+		else if (month == 7 && mauApa == 1){return viewsJuly[date-1];}
+		else if(month == 7 && mauApa == 2){return viewsJuly[(viewsJune.length)-1];}
+		else if(month == 7 && mauApa == 3){return viewsJuly[(viewsJune.length)-2];}
+		else if(month == 7 && mauApa == 4){return viewsJuly[date-1];}
+		else if (month == 8 && mauApa == 1){return viewsAugust[date-1];}
+		else if(month == 8 && mauApa == 2){return viewsAugust[(viewsJune.length)-1];}
+		else if(month == 8 && mauApa == 3){return viewsAugust[(viewsJune.length)-2];}
+		else if(month == 8 && mauApa == 4){return viewsAugust[date-1];}
+	}
 }
 function tableBuilder(date, month, year, videonum){
 	var daysInMonth = (daysTotal(2,month,year)+2);

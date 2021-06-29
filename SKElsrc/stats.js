@@ -422,7 +422,7 @@ function update_View(){
 	var today = tanggalan(2);
 	var thisMonth = (tanggalan(5));
 	var year = tanggalan(4);
-	document.write("<div class='updateViews cf'>")
+	document.write("<div class='updateViews cf'>");
 	for (var p = 1; p <= videoTitles(0); p++){
 		q = lastUpdate(p, today, thisMonth, year);
 		var u = q.toString();
@@ -469,8 +469,7 @@ function update_View_Index(){
 	document.write("<div class='updateViews cf'>");
 	if (lastVid < 9){d = lastVid-(lastVid-1);}
 	else if (lastVid >= 9){d = lastVid-8;}
-	
-	for (var p = d; p <= lastVid; p++){
+	for (var p = d; p <= lastVid+1; p++){
 		console.log("p = "+p);
 		q = lastUpdate(p, today, thisMonth, year);
 		if (q == 0 || q == undefined || q == NaN){

@@ -7,7 +7,8 @@ function videoTitle(videonum){
 				"Sop Ayam Fillet CACANA, Praktis dan Bergizi, sangat mudah dinikmati oleh anak²",
 				"Siasat berkebun di lahan yang terbatas di depan rumah, jadi hijau dan asri!",
 				"Berwisata di Taman Rekreasi Wiladatika saat pandemi dan sudah jenuh dirumah, tetap AMAN dan NYAMAN",
-				"Panen apel sepuasnya di kebun orang! Bawa pulang lagi! wah, ternyata wisata petik apel di Kota Batu"];
+				"Panen apel sepuasnya di kebun orang! Bawa pulang lagi! wah, ternyata wisata petik apel di Kota Batu",
+		    		"Jeruk Medan berbuah lebaaat... bangat sampai kebawah di Berastagi. Teknik Okulasi"];
 	return title[videonum-1];			
 }
 function videoShortTitle(videonum){
@@ -19,10 +20,10 @@ function videoShortTitle(videonum){
 				"Sop Ayam Fillet Cacana",
 				"Siasat berkebun",
 				"Berwisata di Taman Rekreasi Wiladatika",
-				"Panen apel sepuasnya di kebun orang!"];
+				"Panen apel sepuasnya di kebun orang!",
+		    "Jeruk Medan berbuah lebat banget!"];
 	return title[videonum-1];
 }
-
 function videoCode(videonum){
 	var code = ["BBSQmNl4fRA",
 				"63stAwX__zY",
@@ -32,7 +33,8 @@ function videoCode(videonum){
 				"HASZTilywhY",
 				"dwbzq9-ftb4",
 				"i3bWZ1czYiU",
-				"eE-8B1u_yfc"];
+				"eE-8B1u_yfc",
+		  		"-eV21nKOKo4"];
 	return code[videonum-1];
 }
 function videoCounts(){
@@ -44,7 +46,8 @@ function videoCounts(){
 				"HASZTilywhY",
 				"dwbzq9-ftb4",
 				"i3bWZ1czYiU",
-				"eE-8B1u_yfc"];
+				"eE-8B1u_yfc",
+		   		"-eV21nKOKo4"];
 	return code.length;
 }
 function embedding(code){
@@ -60,7 +63,8 @@ function tanggalUpload(videonum){
 					"10/19/2020",
 					"01/08/2021",
 					"04/21/2021",
-					"05/24/2021"];
+					"05/24/2021",
+		      			"06/29/2021"];
 	return tanggal[videonum-1];
 }
 function monthString(month){

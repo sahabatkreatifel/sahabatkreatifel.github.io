@@ -466,11 +466,12 @@ function update_View_Index(){
 	lastVid = videoTitles(0);
 	var today = tanggalan(2);
 	var thisMonth = (tanggalan(5));
-	document.write("<div class='updateViews cf'>")
+	document.write("<div class='updateViews cf'>");
 	if (lastVid < 9){d = lastVid-(lastVid-1);}
 	else if (lastVid >= 9){d = lastVid-8;}
-	console.log("lastvid = "+lastVid)
-	for (var p = d; p <= lastVid; p++) {
+	
+	for (var p = d; p <= lastVid; p++){
+		console.log("p = "+p);
 		q = lastUpdate(p, today, thisMonth, year);
 		if (q == 0 || q == undefined || q == NaN){
 			continue;

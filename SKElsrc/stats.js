@@ -11,12 +11,12 @@ function daysTotal(mauApa,month,year){
 	else if(mauApa==2){return daysInMonth;}
 }
 function tH(column,month,year){
-	var header = ["Video&darr;","Tanggal&rarr;"];
-	var leap = daysTotal(1,month,year);
-	var daysInMonth = daysTotal(2,month,year)+1;
-	for (var i = 1; i < daysInMonth; i++){header.push(i+"/"+month);}
-	if (column == 0){return header.length;}
-	else {return header[column-1];}
+	var header=["Video&darr;","Tanggal&rarr;"];
+	var leap=daysTotal(1,month,year);
+	var daysInMonth=daysTotal(2,month,year)+1;
+	for(var i=1;i<daysInMonth;i++){header.push(i+"/"+month);}
+	if(column==0){return header.length;}
+	else{return header[column-1];}
 }
 function videoTitles(videonum){
 	var videos = [/*1*/"Bubur Rica",
@@ -27,12 +27,13 @@ function videoTitles(videonum){
 			/*6*/"Cacana",
 			/*7*/"Berkebun",
 			/*8*/"Wiladatika",
-			/*9*/"Apel Malang"];
+			/*9*/"Apel Malang",
+		     /*10*/"Jeruk Medan"];
 	if (videonum == 0){return videos.length;}
 	else {return videos[videonum-1];}
 }
 function videoLinks(videonum){
-	var links = ["SKElVids/Bubur.html", "SKElVids/bawal.html", "SKElVids/lidahbuaya.html", "SKElVids/sopsopan.html", "SKElVids/oyong.html", "SKElVids/cacana.html", "SKElVids/berkebun.html", "SKElVids/wiladatika.html", "SKElVids/apel.html"];
+	var links=["SKElVids/Bubur.html","SKElVids/bawal.html", "SKElVids/lidahbuaya.html","SKElVids/sopsopan.html","SKElVids/oyong.html","SKElVids/cacana.html","SKElVids/berkebun.html","SKElVids/wiladatika.html","SKElVids/apel.html","SKElVids/jeruk-medan.html"];
 	return links[videonum-1];
 }
 function monthSelector(month){
@@ -42,16 +43,16 @@ function monthSelector(month){
 }
 function videoSelector (videonum,date,month,year,formatted,mauApa){
 	var views;
-	if (videonum == 1){views = bubur(date,month,year,mauApa);}
-	else if (videonum == 2){views = bawal(date,month,year,mauApa);}
-	else if (videonum == 3){views = lidahBuaya(date,month,year,mauApa);}
-	else if (videonum == 4){views = sopSopan(date,month,year,mauApa);}
-	else if (videonum == 5){views = oyong(date,month,year,mauApa);}
-	else if (videonum == 6){views = cacana(date,month,year,mauApa);}
-	else if (videonum == 7){views = berkebun(date,month,year,mauApa);}
-	else if (videonum == 8){views = wiladatika(date,month,year,mauApa);}
-	else if (videonum == 9){views = apel(date,month,year,mauApa);}
-	//else if(videonum==10){views=jeruk(date,month,year,mauApa);}
+	if(videonum==1){views=bubur(date,month,year,mauApa);}
+	else if(videonum==2){views=bawal(date,month,year,mauApa);}
+	else if(videonum==3){views=lidahBuaya(date,month,year,mauApa);}
+	else if(videonum==4){views=sopSopan(date,month,year,mauApa);}
+	else if(videonum==5){views=oyong(date,month,year,mauApa);}
+	else if(videonum==6){views=cacana(date,month,year,mauApa);}
+	else if(videonum==7){views=berkebun(date,month,year,mauApa);}
+	else if(videonum==8){views=wiladatika(date,month,year,mauApa);}
+	else if(videonum==9){views=apel(date,month,year,mauApa);}
+	else if(videonum==10){views=jeruk(date,month,year,mauApa);}
 	if (formatted == false){return views;}
 	else if (formatted == true){
 		if (views == 0 || views == undefined || views == NaN){return "-";}
@@ -295,24 +296,20 @@ function apel(date,month,year,mauApa){
 }
 function jeruk(date,month,year,mauApa){
 	//var viewsMay = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,62,87,116,137,163,190];
-	var viewsJune = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	var viewsJune = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 	var viewsJuly = [];
 	var viewsAugust = [];
 	if (year == 2021){
 		if (month == 0){return viewsMay.length;}
-		else if (month == 5 && mauApa == 1){return viewsMay[date-1];}
-		else if(month == 5 && mauApa == 3){return viewsMay[(viewsMay.length)-2];}
-		else if(month == 5 && mauApa == 2){return viewsMay[(viewsMay.length)-1];}
-		else if(month == 5 && mauApa == 4){return viewsMay[date-1];}
-		else if (month == 6 && mauApa == 1){return viewsJune[date-1];}
+		else if(month==6 && mauApa == 1){return viewsJune[date-1];}
 		else if(month == 6 && mauApa == 2){return viewsJune[(viewsJune.length)-1];}
 		else if(month == 6 && mauApa == 3){return viewsJune[(viewsJune.length)-2];}
 		else if(month == 6 && mauApa == 4){return viewsJune[date-1];}
-		else if (month == 7 && mauApa == 1){return viewsJuly[date-1];}
+		else if(month == 7 && mauApa == 1){return viewsJuly[date-1];}
 		else if(month == 7 && mauApa == 2){return viewsJuly[(viewsJune.length)-1];}
 		else if(month == 7 && mauApa == 3){return viewsJuly[(viewsJune.length)-2];}
 		else if(month == 7 && mauApa == 4){return viewsJuly[date-1];}
-		else if (month == 8 && mauApa == 1){return viewsAugust[date-1];}
+		else if(month == 8 && mauApa == 1){return viewsAugust[date-1];}
 		else if(month == 8 && mauApa == 2){return viewsAugust[(viewsJune.length)-1];}
 		else if(month == 8 && mauApa == 3){return viewsAugust[(viewsJune.length)-2];}
 		else if(month == 8 && mauApa == 4){return viewsAugust[date-1];}

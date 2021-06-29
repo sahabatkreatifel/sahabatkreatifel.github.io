@@ -330,12 +330,11 @@ function tableBuilder(date, month, year, videonum){
 		s = new Date();
 		s = s.getDate()+1;
 		r = s+1;
-
 	} else{
 		r = daysInMonth;
 		s = daysInMonth2;
 	}
-	for (var column = 1; column <= r; column++){document.write("<th>"+tH(column, month, year)+"</th>");}
+	for (var column=1; column <= r; column++){document.write("<th>"+tH(column, month, year)+"</th>");}
 	for (var vid = videonum; vid <= jumlahVideo; vid++){
 		if (vid%2==0){document.write("<tr id='even' title='"+videoTitles(vid)+"'>");}
 		else{document.write("<tr title='"+videoTitles(vid)+"'>");}
@@ -524,7 +523,7 @@ function monthlyProgress(){
 	var thisYear = (tanggalan(4));
 	document.write("<h2 class='jarakin'> Penambahan selama bulan "+thisMonthWord+" "+thisYear+"</h2>");
 	document.write("<div class='updateViews cf'>")
-	for (var p = 1; p <= videoTitles(0); p++) {
+	for (var p = 1; p <= videoTitles(0)+1; p++) {
 		q = monthlyUpdate(p, today, thisMonth, thisYear);
 		if (p%2==0){
 			document.write("<div class='bungkusTambahan'>")

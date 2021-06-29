@@ -523,7 +523,7 @@ function monthlyProgress(){
 	var thisYear = (tanggalan(4));
 	document.write("<h2 class='jarakin'> Penambahan selama bulan "+thisMonthWord+" "+thisYear+"</h2>");
 	document.write("<div class='updateViews cf'>")
-	for (var p = 1; p <= videoTitles(0)+1; p++) {
+	for (var p = videoTitles(0)-9; p <= videoTitles(0); p++) {
 		q = monthlyUpdate(p, today, thisMonth, thisYear);
 		if (p%2==0){
 			document.write("<div class='bungkusTambahan'>")

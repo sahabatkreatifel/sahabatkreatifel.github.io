@@ -472,7 +472,7 @@ function update_View_Index(){
 	for (var p = d; p <= lastVid; p++){
 		console.log("p = "+p);
 		q = lastUpdate(p, today, thisMonth, year);
-		if (q == 0 || q == undefined || q == NaN){
+		if (q == undefined || q == NaN){
 			continue;
 		} else{
 			var u = q.toString();

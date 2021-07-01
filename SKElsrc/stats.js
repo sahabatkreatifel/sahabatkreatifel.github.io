@@ -464,6 +464,7 @@ function update_View(){
 	document.write("</div>");
 }
 function update_View_Index(){
+	var k = 1;
 	var z = 1;
 	var pertambahanAll=0;
 	var q, lastVid;
@@ -482,26 +483,27 @@ function update_View_Index(){
 		} else{
 			var u = q.toString();
 			u = u.toLocaleString("id-ID");
-			if (p%2==0){
+			if (k%2==0){
 				document.write("<div class='bungkusTambahan even2'><a href='"+videoLinks(p)+"'>")
 				document.write("<div id='tambahan'>"+u+"</div>");
 				document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 				document.write("</a></div>")
-			} else if (p%2!=0){
+			} else if (k%2!=0){
 				document.write("<div class='bungkusTambahan'><a href='"+videoLinks(p)+"'>")
 				document.write("<div id='tambahan'>"+u+"</div>");
 				document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 				document.write("</a></div>")
 			}
 			pertambahanAll+=q;
-			if (p%3==0 && p != videoTitles(0)){
+			if (k%3==0 && p != videoTitles(0)){
 				z++;
 				document.write("</div>")
 				document.write("<div class='updateViews cf'>");
-			} else if ((p%3==0||p%3!=0) && p == videoTitles(0)){
+			} else if ((k%3==0||k%3!=0) && p == videoTitles(0)){
 				document.write("</div>");
 			}
 		}
+		k++;
 	}
 	document.write("<div class='bungkusTambahan totalTambahan'>")
 	document.write("<div id='tambahan'>"+pertambahanAll+"</div>");

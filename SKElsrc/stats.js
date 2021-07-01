@@ -431,23 +431,23 @@ function update_View(){
 		q = lastUpdate(p, today, thisMonth, year);
 		var u = q.toString();
 		u = u.toLocaleString("id-ID");
-		if (p%2==0){
+		if (k%2==0){
 			document.write("<div class='bungkusTambahan even2'><a href='"+videoLinks(p)+"'>")
 			document.write("<div id='tambahan'>"+u+"</div>");
 			document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 			document.write("</a></div>")
-		} else if (p%2!=0){
+		} else if (k%2!=0){
 			document.write("<div class='bungkusTambahan'><a href='"+videoLinks(p)+"'>")
 			document.write("<div id='tambahan'>"+u+"</div>");
 			document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 			document.write("</a></div>")
 		}
 		pertambahanAll+=q;
-		if (p%3==0 && p != videoTitles(0)){
+		if (k%3==0 && p != videoTitles(0)){
 			z++;
 			document.write("</div>")
 			document.write("<div class='updateViews cf'>");
-		} else if ((p%3==0||p%3!=0) && p == videoTitles(0)){
+		} else if ((k%3==0||k%3!=0) && p == videoTitles(0)){
 			document.write("</div>");
 		}
 		k++;

@@ -419,6 +419,7 @@ function tanggalan(mauApa){
 	else if (mauApa==5){return (gettingMonth+1);}
 }
 function update_View(){
+	var k = 1;
 	var z = 1;
 	var pertambahanAll=0;
 	var q;
@@ -449,6 +450,7 @@ function update_View(){
 		} else if ((p%3==0||p%3!=0) && p == videoTitles(0)){
 			document.write("</div>");
 		}
+		k++;
 	}
 	document.write("<div class='bungkusTambahan totalTambahan'>")
 	document.write("<div id='tambahan'>"+pertambahanAll+"</div>");

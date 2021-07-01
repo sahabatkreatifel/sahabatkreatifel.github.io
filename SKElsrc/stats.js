@@ -398,6 +398,7 @@ function lastUpdate(videonum, date, month, year){
 		}
 	}
 	var pertambahan = today - yesterday;
+	console.log("yesterday = "+yesterday);
 	return pertambahan;
 }
 function tanggalan(mauApa){

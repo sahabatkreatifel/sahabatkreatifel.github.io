@@ -54,8 +54,8 @@ function videoSelector(videonum,date,month,year,formatted,mauApa){
 	else if(videonum==9){views=apel(date,month,year,mauApa);}
 	else if(videonum==10){views=jeruk(date,month,year,mauApa);}
 	if(formatted==false){return views;}
-	else if (formatted==true){
-		if (views==0||views==undefined||views==NaN){return "-";}
+	else if(formatted==true){
+		if(views==0||views==undefined||views==NaN){return "-";}
 		else{
 			var u=views;
 			views=views.toString();

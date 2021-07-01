@@ -295,7 +295,6 @@ function apel(date,month,year,mauApa){
 	}
 }
 function jeruk(date,month,year,mauApa){
-	//var viewsMay = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,62,87,116,137,163,190];
 	var viewsJune=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,61];
 	var viewsJuly=[130];
 	var viewsAugust=[];
@@ -316,60 +315,60 @@ function jeruk(date,month,year,mauApa){
 	}
 }
 function tableBuilder(date, month, year, videonum){
-	var daysInMonth = (daysTotal(2,month,year)+2);
-	var daysInMonth2 = (daysTotal(2,month,year)+1);
-	var jumlahVideo = videoTitles(0);
-	var mnth = tanggalan(5);
-	var todayDate = tanggalan(2);
-	var thistimeView,r, s, nextView, tanggalSelanjutnya, tanggalSebelumnya, previousView, previousViewMonth, nextViewMonth, previousViewYear, nextViewYear;
+	var daysInMonth=(daysTotal(2,month,year)+2);
+	var daysInMonth2=(daysTotal(2,month,year)+1);
+	var jumlahVideo=videoTitles(0);
+	var mnth=tanggalan(5);
+	var todayDate=tanggalan(2);
+	var thistimeView,r,s,nextView,tanggalSelanjutnya,tanggalSebelumnya,previousView,previousViewMonth,nextViewMonth,previousViewYear,nextViewYear;
 	document.write("<div class='inH'><h3>Bulan "+monthSelector(month)+"</h3></div>");
 	document.write("<div class='tableWrapper'>")
 	document.write("<table class='viewsData'>");
 	document.write("<tr>");
-	if (month == mnth){
-		s = new Date();
-		s = s.getDate()+1;
-		r = s+1;
+	if (month==mnth){
+		s=new Date();
+		s=s.getDate()+1;
+		r=s+1;
 	} else{
-		r = daysInMonth;
-		s = daysInMonth2;
+		r=daysInMonth;
+		s=daysInMonth2;
 	}
-	for (var column=1; column <= r; column++){document.write("<th>"+tH(column, month, year)+"</th>");}
-	for (var vid = videonum; vid <= jumlahVideo; vid++){
-		if (vid%2==0){document.write("<tr id='even' title='"+videoTitles(vid)+"'>");}
+	for(var column=1;column<=r;column++){document.write("<th>"+tH(column, month, year)+"</th>");}
+	for(var vid=videonum;vid<=jumlahVideo;vid++){
+		if(vid%2==0){document.write("<tr id='even' title='"+videoTitles(vid)+"'>");}
 		else{document.write("<tr title='"+videoTitles(vid)+"'>");}
 		document.write("<td class='judulVideo' colspan='2'>"+videoTitles(vid)+"</td>");
-		for (var tanggal = date; tanggal < s; tanggal++){
-			tanggalSelanjutnya = tanggal+1;
-			tanggalSebelumnya = tanggal-1;
-			if (tanggalSebelumnya < 1){
-				previousViewMonth = month-1;
-				tanggalSebelumnya = daysTotal(2,previousViewMonth,year);
-			} else{previousViewMonth = month;}
-			if (tanggalSelanjutnya > daysTotal(2,month,year)){
-				nextViewMonth = month+1;
-				tanggalSelanjutnya = 1;
-			}else{nextViewMonth = month;}
-			if (previousViewMonth<1){previousViewYear = year-1;}
-			else{previousViewYear = year;}
-			if (nextViewMonth > 12){nextViewYear = year+1;}
-			else {nextViewYear=year;}
-			thistimeView = videoSelector(vid, tanggal, month, year, false, 1);
-			nextView = videoSelector(vid,tanggalSelanjutnya,nextViewMonth,nextViewYear, false, 1);
-			previousView = videoSelector(vid,tanggalSebelumnya,previousViewMonth,previousViewYear, false, 1);
-			if ((thistimeView == 0 && nextView!=thistimeView) && (nextView!=0||nextView!=undefined)){
-				thistimeView = 0;
+		for(var tanggal=date;tanggal<s;tanggal++){
+			tanggalSelanjutnya=tanggal+1;
+			tanggalSebelumnya=tanggal-1;
+			if(tanggalSebelumnya<1){
+				previousViewMonth=month-1;
+				tanggalSebelumnya=daysTotal(2,previousViewMonth,year);
+			}else{previousViewMonth=month;}
+			if(tanggalSelanjutnya>daysTotal(2,month,year)){
+				nextViewMonth=month+1;
+				tanggalSelanjutnya=1;
+			}else{nextViewMonth=month;}
+			if(previousViewMonth<1){previousViewYear=year-1;}
+			else{previousViewYear=year;}
+			if (nextViewMonth>12){nextViewYear=year+1;}
+			else{nextViewYear=year;}
+			thistimeView=videoSelector(vid,tanggal,month,year,false,1);
+			nextView=videoSelector(vid,tanggalSelanjutnya,nextViewMonth,nextViewYear,false,1);
+			previousView=videoSelector(vid,tanggalSebelumnya,previousViewMonth,previousViewYear,false,1);
+			if((thistimeView==0&&nextView!=thistimeView)&&(nextView!=0||nextView!=undefined)){
+				thistimeView=0;
 				document.write("<td id='entrance' class='numbersView'>");
 				document.write(thistimeView);
 				document.write("</td>");
-			} else if (thistimeView != 0 && previousView>thistimeView && (previousView!=0 && previousView!=undefined && previousView!="-")){
-				thistimeView = videoSelector(vid, tanggal, month, year, true, 1);
+			} else if(thistimeView!=0&&previousView>thistimeView&&(previousView!=0&&previousView!=undefined&&previousView!="-")){
+				thistimeView=videoSelector(vid,tanggal,month,year,true,1);
 				document.write();
 				document.write("<td id='lowerCount' class='numbersView'>");
 				document.write(thistimeView);
 				document.write("</td>");}
 			 else{
-			 	thistimeView = videoSelector(vid, tanggal, month, year, true, 1);
+			 	thistimeView=videoSelector(vid,tanggal,month,year,true,1);
 				document.write("<td class='numbersView'>");
 				document.write(thistimeView);
 				document.write("</td>");
@@ -381,70 +380,69 @@ function tableBuilder(date, month, year, videonum){
 	document.write("</table>");
 	document.write("</div>");
 }
-function lastUpdate(videonum, date, month, year){
-	var today = videoSelector(videonum, date, month, year, false, 2);
-	var yesterday = videoSelector(videonum, date, month, year, false, 3);
-	var yesterdayMonth, yesterdayYear;
-	var isLeap = daysTotal(1,month,year);
-	var yesterdayDaysinMonth;
-	if (date == 1){
-		yesterdayMonth = month-1;
-		yesterdayDaysinMonth = daysTotal(2,yesterdayMonth,year);
-		if (month == 1){
-			yesterdayYear = year-1;
-			yesterday = videoSelector (videonum, yesterdayDaysinMonth, yesterdayMonth, yesterdayYear, false, 2);
+function lastUpdate(videonum,date,month,year){
+	var today=videoSelector(videonum,date,month,year,false,2);
+	var yesterday=videoSelector(videonum,date,month,year,false,3);
+	var yesterdayMonth,yesterdayYear,yesterdayDaysinMonth;
+	var isLeap=daysTotal(1,month,year);
+	if (date==1){
+		yesterdayMonth=month-1;
+		yesterdayDaysinMonth=daysTotal(2,yesterdayMonth,year);
+		if(month==1){
+			yesterdayYear=year-1;
+			yesterday=videoSelector(videonum,yesterdayDaysinMonth,yesterdayMonth,yesterdayYear,false,2);
 		} else{
-			yesterday = videoSelector (videonum, yesterdayDaysinMonth, yesterdayMonth, year, false, 2);
+			yesterday=videoSelector(videonum,yesterdayDaysinMonth,yesterdayMonth,year,false,2);
 		}
 	}
-	var pertambahan = today - yesterday;
+	var pertambahan=today-yesterday;
 	return pertambahan;
 }
 function tanggalan(mauApa){
-	var d = new Date;
-	var days = ["Minggu","Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-	var gettingDay = d.getDay();
-	var day = days[gettingDay];
-	var date = d.getDate();
-	var gettingMonth = d.getMonth();
-	var month = monthSelector((gettingMonth+1));
-	var year = d.getFullYear();
-	if (mauApa==1){return day;}
-	else if (mauApa==2){return date;}
-	else if (mauApa==3){return month;}
-	else if (mauApa==4){return year;}
-	else if (mauApa==5){return (gettingMonth+1);}
+	var d=new Date;
+	var days=["Minggu","Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+	var gettingDay=d.getDay();
+	var day=days[gettingDay];
+	var date=d.getDate();
+	var gettingMonth=d.getMonth();
+	var month=monthSelector((gettingMonth+1));
+	var year=d.getFullYear();
+	if(mauApa==1){return day;}
+	else if(mauApa==2){return date;}
+	else if(mauApa==3){return month;}
+	else if(mauApa==4){return year;}
+	else if(mauApa==5){return (gettingMonth+1);}
 }
 function update_View(){
-	var k = 1;
-	var z = 1;
+	var k=1;
+	var z=1;
 	var pertambahanAll=0;
 	var q;
-	var today = tanggalan(2);
-	var thisMonth = (tanggalan(5));
-	var year = tanggalan(4);
+	var today=tanggalan(2);
+	var thisMonth=(tanggalan(5));
+	var year=tanggalan(4);
 	document.write("<div class='updateViews cf'>");
-	for (var p = 1; p <= videoTitles(0); p++){
-		q = lastUpdate(p, today, thisMonth, year);
-		var u = q.toString();
-		u = u.toLocaleString("id-ID");
-		if (k%2==0){
+	for (var p=1;p<=videoTitles(0);p++){
+		q=lastUpdate(p,today,thisMonth,year);
+		var u=q.toString();
+		u=u.toLocaleString("id-ID");
+		if(k%2==0){
 			document.write("<div class='bungkusTambahan even2'><a href='"+videoLinks(p)+"'>")
 			document.write("<div id='tambahan'>"+u+"</div>");
 			document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 			document.write("</a></div>")
-		} else if (k%2!=0){
+		}else if(k%2!=0){
 			document.write("<div class='bungkusTambahan'><a href='"+videoLinks(p)+"'>")
 			document.write("<div id='tambahan'>"+u+"</div>");
 			document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 			document.write("</a></div>")
 		}
 		pertambahanAll+=q;
-		if (k%3==0 && p != videoTitles(0)){
+		if(k%3==0 && p != videoTitles(0)){
 			z++;
 			document.write("</div>")
 			document.write("<div class='updateViews cf'>");
-		} else if ((k%3==0||k%3!=0) && p == videoTitles(0)){
+		}else if((k%3==0||k%3!=0) && p == videoTitles(0)){
 			document.write("</div>");
 		}
 		k++;
@@ -453,7 +451,7 @@ function update_View(){
 	document.write("<div id='tambahan'>"+pertambahanAll+"</div>");
 	document.write("<div id='judulVid'>Total</div>");
 	document.write("</div>")
-	var rataRataTambah = pertambahanAll/videoTitles(0);
+	var rataRataTambah=pertambahanAll/videoTitles(0);
 	rataRataTambah=rataRataTambah.toFixed(2);
 	document.write("<div class='bungkusTambahan totalTambahan'>")
 	document.write("<div id='tambahan'>"+rataRataTambah.toLocaleString('id-ID')+"</div>");
@@ -461,42 +459,40 @@ function update_View(){
 	document.write("</div>");
 }
 function update_View_Index(){
-	var k = 1;
-	var z = 1;
+	var k=1;
+	var z=1;
 	var pertambahanAll=0;
-	var q, lastVid;
-	var year = tanggalan(4);
-	lastVid = videoTitles(0);
-	var today = tanggalan(2);
-	var thisMonth = (tanggalan(5));
+	var q,lastVid;
+	var year=tanggalan(4);
+	lastVid=videoTitles(0);
+	var today=tanggalan(2);
+	var thisMonth=(tanggalan(5));
 	document.write("<div class='updateViews cf'>");
-	if (lastVid < 9){d = lastVid-(lastVid-1);}
-	else if (lastVid >= 9){d = lastVid-8;}
-	for (var p = d; p <= lastVid; p++){
-		console.log("p = "+p);
-		q = lastUpdate(p, today, thisMonth, year);
-		if (q == undefined || q == NaN){
-			continue;
-		} else{
-			var u = q.toString();
-			u = u.toLocaleString("id-ID");
-			if (k%2==0){
+	if(lastVid<9){d=lastVid-(lastVid-1);}
+	else if(lastVid>=9){d=lastVid-8;}
+	for(var p=d;p<=lastVid;p++){
+		q=lastUpdate(p, today, thisMonth, year);
+		if(q==undefined||q==NaN){continue;}
+		else{
+			var u=q.toString();
+			u=u.toLocaleString("id-ID");
+			if(k%2==0){
 				document.write("<div class='bungkusTambahan even2'><a href='"+videoLinks(p)+"'>")
 				document.write("<div id='tambahan'>"+u+"</div>");
 				document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 				document.write("</a></div>")
-			} else if (k%2!=0){
+			} else if k%2!=0){
 				document.write("<div class='bungkusTambahan'><a href='"+videoLinks(p)+"'>")
 				document.write("<div id='tambahan'>"+u+"</div>");
 				document.write("<div id='judulVid'>"+videoTitles(p)+"</div>");
 				document.write("</a></div>")
 			}
 			pertambahanAll+=q;
-			if (k%3==0 && p != videoTitles(0)){
+			if(k%3==0 && p != videoTitles(0)){
 				z++;
 				document.write("</div>")
 				document.write("<div class='updateViews cf'>");
-			} else if ((k%3==0||k%3!=0) && p == videoTitles(0)){
+			} else if((k%3==0||k%3!=0) && p == videoTitles(0)){
 				document.write("</div>");
 			}
 		}
@@ -506,23 +502,23 @@ function update_View_Index(){
 	document.write("<div id='tambahan'>"+pertambahanAll+"</div>");
 	document.write("<div id='judulVid'>Total</div>");
 	document.write("</div>")
-	var rataRataTambah = pertambahanAll/videoTitles(0);
+	var rataRataTambah=pertambahanAll/videoTitles(0);
 	rataRataTambah=rataRataTambah.toFixed(2);
 	document.write("<div class='bungkusTambahan totalTambahan'>")
 	document.write("<div id='tambahan'>"+rataRataTambah.toLocaleString('id-ID')+"</div>");
 	document.write("<div id='judulVid'>Penambahan rata-rata</div>");
 	document.write("</div>")
 }
-function monthlyUpdate(videonum, date, month, year){
-	var today = videoSelector (videonum, date, month, year, false, 2);
-	var firstDay = videoSelector (videonum, 1, month, year, false, 1);
-	var pertambahan = today - firstDay;
+function monthlyUpdate(videonum,date,month,year){
+	var today=videoSelector(videonum,date,month,year,false,2);
+	var firstDay=videoSelector(videonum,1,month,year,false,1);
+	var pertambahan=today-firstDay;
 	return pertambahan;
 }
 function monthlyProgress(){
 	var pertambahanAll=0;
 	var q;
-	var today = tanggalan(2);
+	var today=tanggalan(2);
 	var thisMonth = (tanggalan(5));
 	var thisMonthWord = (tanggalan(3));
 	var thisYear = (tanggalan(4));

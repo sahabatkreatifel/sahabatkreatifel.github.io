@@ -41,7 +41,7 @@ function monthSelector(month){
 	if (month == 0){return months.length;}
 	else {return months[month-1];}
 }
-function videoSelector (videonum,date,month,year,formatted,mauApa){
+function videoSelector(videonum,date,month,year,formatted,mauApa){
 	var views;
 	if(videonum==1){views=bubur(date,month,year,mauApa);}
 	else if(videonum==2){views=bawal(date,month,year,mauApa);}
@@ -53,31 +53,31 @@ function videoSelector (videonum,date,month,year,formatted,mauApa){
 	else if(videonum==8){views=wiladatika(date,month,year,mauApa);}
 	else if(videonum==9){views=apel(date,month,year,mauApa);}
 	else if(videonum==10){views=jeruk(date,month,year,mauApa);}
-	if (formatted == false){return views;}
-	else if (formatted == true){
-		if (views == 0 || views == undefined || views == NaN){return "-";}
-		else {
-			var u = views;
-			views = views.toString();
+	if(formatted==false){return views;}
+	else if (formatted==true){
+		if (views==0||views==undefined||views==NaN){return "-";}
+		else{
+			var u=views;
+			views=views.toString();
 			var pattern;
-   			if (u < 1000000){
-   				pattern = /(-?\d+)(\d{3})/;
-   				while (pattern.test(views)){
-        		views = views.replace(pattern, "$1.$2");}
+   			if (u<1000000){
+   				pattern= /(-?\d+)(\d{3})/;
+   				while(pattern.test(views)){
+        		views=views.replace(pattern, "$1.$2");}
    			}
 			return views;
 		}
 	}
 }
 function bubur(date,month,year,mauApa){
-	var viewsMay = [4731,4742,4752,4764,4776,4785,4793,4800,4809,4816,4827,4834,4844,4855,4865,4873,4882,4893,4903,4911,4922,4930,4937,4947,4955,4970,4987,5004,5015,5025,5034];
-	var viewsJune = [5052,5064,5072,5082,5089,5101,5109,5117,5125,5134,5143,5154,5161,5172,5178,5185,5199,5206,5211,5220,5235,5242,5250,5263,5273,5281,5290,5298,5306,5316];
-	var viewsJuly = [5326];
-	var viewsAugust = [];
-	if (year == 2021){
-		if (month == 0){return viewsMay.length;}
-		else if(month == 5 && mauApa == 1){return viewsMay[date-1];}
-		else if(month == 5 && mauApa == 2){return viewsMay[(viewsMay.length)-1];}
+	var viewsMay=[4731,4742,4752,4764,4776,4785,4793,4800,4809,4816,4827,4834,4844,4855,4865,4873,4882,4893,4903,4911,4922,4930,4937,4947,4955,4970,4987,5004,5015,5025,5034];
+	var viewsJune=[5052,5064,5072,5082,5089,5101,5109,5117,5125,5134,5143,5154,5161,5172,5178,5185,5199,5206,5211,5220,5235,5242,5250,5263,5273,5281,5290,5298,5306,5316];
+	var viewsJuly=[5326];
+	var viewsAugust=[];
+	if (year==2021){
+		if(month==0){return viewsMay.length;}
+		else if(month==5&&mauApa==1){return viewsMay[date-1];}
+		else if(month==5&&mauApa==2){return viewsMay[(viewsMay.length)-1];}
 		else if(month == 5 && mauApa == 3){return viewsMay[(viewsMay.length)-2];}
 		else if(month == 5 && mauApa == 4){return viewsMay[date-1];}
 		else if(month == 6 && mauApa == 1){return viewsJune[date-1];}

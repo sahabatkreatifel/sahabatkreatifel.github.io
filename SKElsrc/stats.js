@@ -19,15 +19,7 @@ function tH(column,month,year){
 	else{return header[column-1];}
 }
 function videoTitles(videonum){
-	var videos=[/*1*/"Bubur Rica",
-			/*2*/"Ikan Bawal",
-			/*3*/"Lidah Buaya",
-			/*4*/"Sop-sopan",
-			/*5*/"Sayur Oyong",
-			/*6*/"Cacana",
-			/*7*/"Berkebun",
-			/*8*/"Wiladatika",
-			/*9*/"Apel Malang",
+	var videos=["Bubur Rica","Ikan Bawal","Lidah Buaya","Sop-sopan","Sayur Oyong","Cacana","Berkebun","Wiladatika","Apel Malang",
 		     /*10*/"Jeruk Medan"];
 	if(videonum==0){return videos.length;}
 	else{return videos[videonum-1];}

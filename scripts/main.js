@@ -16,18 +16,17 @@ async function getYtChannelProp(channelname,passback='all'){
     let p;
     if(/(snippet|name|desc|thumb|handle)/i.test(passback)){
         let ytChannelPropRaw = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${id}&key=${key}`)
-        /*$ytChannelProp=json_decode($ytChannelPropRaw,true);
-        $snippet=$ytChannelProp['items'][0]['snippet'];
-        if(preg_match("/snippet/i", $passback)){$p=$ytChannelProp;}
-        else if(preg_match("/name/i", $passback)){$p=$snippet['title'];}
-        else if(preg_match("/desc/i", $passback)){$p=$snippet['description'];}
-        else if(preg_match("/thumb/i", $passback)){
-            if(preg_match("/thumb-small/i", $passback)){$p=$snippet['thumbnails']['default']['url'];}
-            else if(preg_match("/thumb-med(ium)?/i", $passback)){$p=$snippet['thumbnails']['medium']['url'];}
-            else if(preg_match("/thumb(-high)?/i", $passback)){$p=$snippet['thumbnails']['high']['url'];}
-            else if(preg_match("/handle/i", $passback)){$p=$snippet['customUrl'];}
-        }*/
-      console.log(ytChannelPropRaw)
+        let snippet=ytChannelPropRaw['items'][0]['snippet'];let p;
+        if(/snippet/gi.test(passback)){p=ytChannelProp}
+        else if(/name/gi.test(passback)){p=snippet['title']}
+        else if(/desc/gi.test(passback)){p=snippet['description']}
+        else if(/thumb/gi.test(passback)){
+          if(/thumb-small/i.test(passback)){p=snippet['thumbnails']['default']['url']}
+          else if(/thumb-med(ium)?/i.test(passback)){p=snippet['thumbnails']['medium']['url']}
+          else if(/thumb(-high)?/i.test(passback)){p=snippet['thumbnails']['high']['url']}
+          else if(/handle/i.test(passback)){p=snippet['customUrl']}
+        }
+      console.log(p)
     }
     /*else if(preg_match("/(allstats|stats|videocount|subs|viewcount)/i", $passback)){
         $ytChannelPropRaw=file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=$id&key=$key");

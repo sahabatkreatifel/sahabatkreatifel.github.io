@@ -57,7 +57,7 @@ async function listvideo(x,maxx=20){
     let v,id,key=getApiKey('yt');
     id=getYtChannelId(x);
     let videolistraw=getYtVideoList(x,maxx);
-    for(var i=0;i<videolistraw.items.count.i++){
+    for(var i=0;i<videolistraw.items.count;i++){
       document.write(videolistraw.items[i].snippet+'<br>')
     }
 }

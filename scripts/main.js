@@ -48,6 +48,7 @@ async function getYtVideoList(x,max=20){
     let v,id,key=getApiKey('yt');
     id=getYtChannelId(x);
     let ytChannelPlaylist = await getjsonfile("https://www.googleapis.com/youtube/v3/channels?id=$id&key=$key&part=contentDetails");
+  console.log(ytChannelPlaylist);
     let ytChannelPlaylistId=ytChannelPlaylist['items'][0]['contentDetails']['relatedPlaylists']['uploads'];
     let ytVidData=await getjsonfile("https://www.googleapis.com/youtube/v3/playlistItems?playlistId=$ytChannelPlaylistId&key=$key&part=snippet&maxResults=$max");
     return ytVidData;

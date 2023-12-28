@@ -12,7 +12,7 @@ async function getjsonfile(url){
   let res=await fetch(url);let text=await res.text();return JSON.parse(text);
 }
 function getYtChannelProp(channelname,passback='all'){
-    let id=getYtChannelId($channelname),key=getApiKey('yt');
+    let id=getYtChannelId(channelname),key=getApiKey('yt');
     let p;
     if(/(snippet|name|desc|thumb|handle)/i.test(passback)){
         let ytChannelPropRaw = getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${id}&key=${key}`)

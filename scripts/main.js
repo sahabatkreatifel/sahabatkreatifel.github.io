@@ -15,7 +15,7 @@ function getYtChannelProp(channelname,passback='all'){
     let id=getYtChannelId(channelname),key=getApiKey('yt');
     let p;
     if(/(snippet|name|desc|thumb|handle)/i.test(passback)){
-        let ytChannelPropRaw = getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${id}&key=${key}`)
+        let ytChannelPropRaw = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${id}&key=${key}`)
         /*$ytChannelProp=json_decode($ytChannelPropRaw,true);
         $snippet=$ytChannelProp['items'][0]['snippet'];
         if(preg_match("/snippet/i", $passback)){$p=$ytChannelProp;}
@@ -39,7 +39,7 @@ function getYtChannelProp(channelname,passback='all'){
         else if(preg_match("/viewcount/i", $passback)){$p=$stats['viewCount'];}
     }*/
     else if(/(all)/i.test(passback) && passback!=='allstats'){
-      let ytChannelPropRaw = getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${key}`)
+      let ytChannelPropRaw = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${key}`)
       //ytChannelPropRaw=file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=$id&key=$key");
       console.log(ytChannelPropRaw);
     }

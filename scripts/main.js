@@ -53,3 +53,11 @@ async function getYtVideoList(x,maxx=20){
     let ytVidData=await getjsonfile(`https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${ytChannelPlaylistId}&key=${key}&part=snippet&maxResults=${maxx}`);
     return ytVidData;
 }
+async function listvideo(x,maxx=20){
+    let v,id,key=getApiKey('yt');
+    id=getYtChannelId(x);
+    let videolistraw=getYtVideoList(x,maxx);
+    for(var i=0;i<videolistraw.items.count.i++){
+      document.write(videolistraw.items[i].snippet+'<br>')
+    }
+}

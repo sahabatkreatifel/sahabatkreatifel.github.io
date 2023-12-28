@@ -38,7 +38,7 @@ function getYtChannelProp(channelname,passback='all'){
         else if(preg_match("/subs/i", $passback)){$p=$stats['subscriberCount'];}
         else if(preg_match("/viewcount/i", $passback)){$p=$stats['viewCount'];}
     }*/
-    else if(preg_match("/all/i", $passback) and $passback!=='allstats'){
+    else if(/(all)/i.test(passback) && passback!=='allstats'){
       let ytChannelPropRaw = getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${key}`)
       //ytChannelPropRaw=file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=$id&key=$key");
       console.log(ytChannelPropRaw);

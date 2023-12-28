@@ -40,7 +40,7 @@ async function getYtChannelProp(channelname,passback='all'){
     else if(/(all)/i.test(passback) && passback!=='allstats'){
       let ytChannelPropRaw = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${key}`)
       //ytChannelPropRaw=file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=$id&key=$key");
-      console.log(ytChannelPropRaw);
+      console.log(p);
     }
     /*else{$p=false;}
     return $p;*/

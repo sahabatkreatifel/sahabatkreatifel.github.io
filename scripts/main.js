@@ -26,7 +26,6 @@ async function getYtChannelProp(channelname,passback='all'){
           else if(/thumb(-high)?/i.test(passback)){p=snippet['thumbnails']['high']['url']}
           else if(/handle/i.test(passback)){p=snippet['customUrl']}
         }
-      console.log(p)
     }
     /*else if(preg_match("/(allstats|stats|videocount|subs|viewcount)/i", $passback)){
         $ytChannelPropRaw=file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=$id&key=$key");
@@ -38,10 +37,10 @@ async function getYtChannelProp(channelname,passback='all'){
         else if(preg_match("/viewcount/i", $passback)){$p=$stats['viewCount'];}
     }*/
     else if(/(all)/i.test(passback) && passback!=='allstats'){
-      let ytChannelPropRaw = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${key}`)
+      p = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${key}`)
       //ytChannelPropRaw=file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=$id&key=$key");
-      console.log(p);
     }
+    console.log(p);
     /*else{$p=false;}
     return $p;*/
 }

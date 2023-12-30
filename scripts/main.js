@@ -9,7 +9,7 @@ function getYtChannelId(x){
   return ytid;
 }
 async function getjsonfile(url){
-  let res=await fetch(url);let text=await res.text();return text;
+  let res=await fetch(url);let text=await res.text();return JSON.parse(text);
 }
 async function getYtChannelProp(channelname,passback='all'){
     let id=getYtChannelId(channelname),key=getApiKey('yt');
@@ -36,7 +36,7 @@ async function getYtChannelProp(channelname,passback='all'){
         else if(preg_match("/subs/i", $passback)){$p=$stats['subscriberCount'];}
         else if(preg_match("/viewcount/i", $passback)){$p=$stats['viewCount'];}
     }*/
-    else if(/(all)/i.test(passback) && passback!=='allstats'){
+    else if(/(all)/i.test(passback) && !passback.includes('allstats')){
       p = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${key}`)
       //ytChannelPropRaw=file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=$id&key=$key");
     }
@@ -51,7 +51,6 @@ async function getYtVideoList(x,maxx=20){
   //console.log(ytChannelPlaylist);
     let ytChannelPlaylistId=ytChannelPlaylist['items'][0]['contentDetails']['relatedPlaylists']['uploads'];
     let ytVidData=await getjsonfile(`https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${ytChannelPlaylistId}&key=${key}&part=snippet&maxResults=${maxx}`);
-    console.log('yt vid data = '+JSON.stringify(ytVidData))
     return ytVidData;
 }
 async function listvideo(x,maxx=20){

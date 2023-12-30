@@ -42,8 +42,7 @@ async function getYtChannelProp(channelname,passback='all'){
       
     }
     else{p=false;}
-    console.log(JSON.parse(p));
-    return p;
+    return JSON.parse(p);
 }
 async function getYtVideoList(x,maxx=20){
     let v,id,key=getApiKey('yt');
@@ -52,7 +51,7 @@ async function getYtVideoList(x,maxx=20){
   //console.log(ytChannelPlaylist);
     let ytChannelPlaylistId=ytChannelPlaylist['items'][0]['contentDetails']['relatedPlaylists']['uploads'];
     let ytVidData=await getjsonfile(`https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${ytChannelPlaylistId}&key=${key}&part=snippet&maxResults=${maxx}`);
-    return ytVidData;
+    return JSON.parse(ytVidData);
 }
 async function listvideo(x,maxx=20){
     let v,id,key=getApiKey('yt');

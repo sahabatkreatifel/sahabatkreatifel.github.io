@@ -58,7 +58,7 @@ async function listvideo(x,maxx=20){
     id=getYtChannelId(x);
     let videolistraw=getYtVideoList(x,maxx);
   console.log(videolistraw);
-    for(var i=0;i<videolistraw.items.count;i++){
+    for(var i=0;i<videolistraw.items.length;i++){
       document.write(videolistraw.items[i].snippet+'<br>')
     }
 }

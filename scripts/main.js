@@ -16,7 +16,7 @@ async function getYtChannelProp(channelname,passback='all'){
     let p;
     if(/(snippet|name|desc|thumb|handle)/i.test(passback)){
         let ytChannelPropRaw = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${id}&key=${key}`)
-        let snippet=ytChannelPropRaw['items'][0]['snippet'];let p;
+        let snippet=ytChannelPropRaw['items'][0]['snippet'];
         if(/snippet/gi.test(passback)){p=ytChannelProp}
         else if(/name/gi.test(passback)){p=snippet['title']}
         else if(/desc/gi.test(passback)){p=snippet['description']}
@@ -39,6 +39,7 @@ async function getYtChannelProp(channelname,passback='all'){
     else if(/(all)/i.test(passback) && !passback.includes('allstats')){
       p = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${key}`)
       //ytChannelPropRaw=file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=$id&key=$key");
+      console.log(JSON.parse(p));
     }
     else{p=false;}
     

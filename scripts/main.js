@@ -45,6 +45,7 @@ async function getYtChannelProp(channelname,passback='all'){
     return p;
 }
 async function getYtVideoList(x,maxx=20){
+  console.log('max = '+maxx)
     let v,id,key=getApiKey('yt');
     id=getYtChannelId(x);
     let ytChannelPlaylist = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?id=${id}&key=${key}&part=contentDetails`);

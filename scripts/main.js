@@ -6,7 +6,6 @@ function getApiKey(x='yt'){
 function getYtChannelId(x){
   let ytid;
   if(/skel/gi.test(x)){ytid='UCV5ibzkKa5UBsTAEB5B0pnA'}
-  console.log(ytid);
   return ytid;
 }
 async function getjsonfile(url){
@@ -50,7 +49,7 @@ async function getYtVideoList(x,maxx=20){
     let v,id,key=getApiKey('yt');
     id=getYtChannelId(x);
     let ytChannelPlaylist = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?id=${id}&key=${key}&part=contentDetails`);
-  //console.log(ytChannelPlaylist);
+  console.log(ytChannelPlaylist);
     let ytChannelPlaylistId=ytChannelPlaylist['items'][0]['contentDetails']['relatedPlaylists']['uploads'];
     let ytVidData=await getjsonfile(`https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${ytChannelPlaylistId}&key=${key}&part=snippet&maxResults=${maxx}`);
     return ytVidData;

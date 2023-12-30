@@ -39,10 +39,10 @@ async function getYtChannelProp(channelname,passback='all'){
     else if(/(all)/i.test(passback) && !passback.includes('allstats')){
       p = await getjsonfile(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${id}&key=${key}`)
       //ytChannelPropRaw=file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=$id&key=$key");
-      console.log(JSON.parse(p));
+      
     }
     else{p=false;}
-    
+    console.log(JSON.parse(p));
     return p;
 }
 async function getYtVideoList(x,maxx=20){

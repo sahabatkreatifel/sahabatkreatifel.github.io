@@ -9,7 +9,7 @@ function getYtChannelId(x){
   return ytid;
 }
 async function getjsonfile(url){
-  let res=await fetch(url);let text=await res.text();return JSON.parse(text);
+  let res=await fetch(url);let text=await res.text();return text;
 }
 async function getYtChannelProp(channelname,passback='all'){
     let id=getYtChannelId(channelname),key=getApiKey('yt');

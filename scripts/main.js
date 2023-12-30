@@ -6,6 +6,7 @@ function getApiKey(x='yt'){
 function getYtChannelId(x){
   let ytid;
   if(/skel/gi.test(x)){ytid='UCV5ibzkKa5UBsTAEB5B0pnA'}
+  console.log(ytid);
   return ytid;
 }
 async function getjsonfile(url){
